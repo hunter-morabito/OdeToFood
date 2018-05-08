@@ -19,6 +19,7 @@ namespace OdeToFood
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                // intstantiates Starup Class and invokes the configureservices() and configure() methods
                 .UseStartup<Startup>()
                 .Build();
     }
