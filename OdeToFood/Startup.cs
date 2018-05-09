@@ -19,7 +19,7 @@ namespace OdeToFood
         {
             // Way of telling ASP.NET core that you will only need one instance of this service for the entire application
             services.AddSingleton<IGreeter, Greeter>();
-
+            services.AddMvc();
             // Any time someone needs a new service, create a new instance
             // services.AddTransient
 
@@ -78,6 +78,15 @@ namespace OdeToFood
             {
                 app.UseExceptionHandler();
             }
+
+            // sets up both of the middleware below
+            // app.UseFileServer();
+            // This will look for a default files and set it as your default page, index.html is one of these defaults
+            // app.UseDefaultFiles();
+            // Lets us use the file system (which must be under the 'wwwroot' folder
+            app.UseStaticFiles();
+
+            app.UseMvcWithDefaultRoute();
 
             // Dont normally see in normal asp.net applications
             app.Run(async (context) =>
