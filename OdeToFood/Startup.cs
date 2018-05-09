@@ -36,48 +36,54 @@ namespace OdeToFood
                               IGreeter greeter,
                               ILogger<Startup> logger)
         {
-            //if (env.IsDevelopment())
-            //{
-            //    app.UseDeveloperExceptionPage();
-            //}
 
             // How to get middleware:
             // app.Use
 
-            // How to write middleware:
-            app.Use(next =>
-            {
-                // This returned  function is the actual middleware
-                return async context =>
-                {
-                    logger.LogInformation("Request Incoming");
-                    if (context.Request.Path.StartsWithSegments("/mym")){
-                        // run this middleware
-                        await context.Response.WriteAsync("Hit!!");
-                        logger.LogInformation("Request Handled");
-                    }
-                    else
-                    {
-                        // go to next piece of middleware
-                        await next(context);
-                        logger.LogInformation("Response outgoing");
-                    }
-                };
-            });
+            //// How to write middleware:
+            //app.Use(next =>
+            //{
+            //    // This returned  function is the actual middleware
+            //    return async context =>
+            //    {
+            //        logger.LogInformation("Request Incoming");
+            //        if (context.Request.Path.StartsWithSegments("/mym"))
+            //        {
+            //            // run this middleware
+            //            await context.Response.WriteAsync("Hit!!");
+            //            logger.LogInformation("Request Handled");
+            //        }
+            //        else
+            //        {
+            //            // go to next piece of middleware
+            //            await next(context);
+            //            logger.LogInformation("Response outgoing");
+            //        }
+            //    };
+            //});
 
-            // ORDER IS IMPORTANT
-            // Sample of middleware
-            app.UseWelcomePage(new WelcomePageOptions
+            //// ORDER IS IMPORTANT
+            //// Sample of middleware
+            ////app.UseWelcomePage(new WelcomePageOptions
+            //{
+            //    // Create an options object that gets passed into the 'USE', and only run if the path is /wp
+            //    Path = "/wp"
+            //});
+
+            if (env.IsDevelopment())
             {
-                // Create an options object that gets passed into the 'USE', and only run if the path is /wp
-                Path = "/wp"
-            });
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler();
+            }
 
             // Dont normally see in normal asp.net applications
             app.Run(async (context) =>
             {
                 var greeting = greeter.GetMessageOfTheDay();
-                await context.Response.WriteAsync(greeting);
+                await context.Response.WriteAsync($"{greeting} : {env.EnvironmentName}");
             });
         }
     }
