@@ -1,13 +1,27 @@
 # OdeToFood
 This project was completed alongside the ASP.NET Core Fundamentals course offered by Pluralsight. Instructed by Scott Allen.
 
-## Lecture list after code changes
-
+## Lecture List
 ### Building Your First ASP.NET Core Application
+* Introduction
+* Setup
 * A New Project
+* Command Line Tools and Code
+* The ASP.NET Core Project Structure
 * Adding a Configuration Source
+* Creating and Injecting Greeting Service
+* Summary
 
 ### Starup and Middleware
+* Introduction
+* How Middleware Works
 * Using IApplicationBuilder
+* showing Exception Details
 * Middleware to Match the Environment
+* Serving Files
 * Setting up ASP.NET MVC Middleware
+* summary
+
+### Controllers in the MVC Framework
+* Introduction
+* The Model View Controller Design Pattern
