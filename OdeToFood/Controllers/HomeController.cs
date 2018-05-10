@@ -15,7 +15,8 @@ namespace OdeToFood.Controllers
         {
             var model = new Restaurant { Id = 1, Name = "Hunter's Pizza Place" };
 
-            return new ObjectResult(model);
+            // If you leave View with no parameters then it will assume the name of the action (Index.cshtml)
+            return View(model);
         }
     }
 }

@@ -29,3 +29,4 @@ This project was completed alongside the ASP.NET Core Fundamentals course offere
 * Conventional Routes
 * Attribute Routes
 * Action Results
+* Rendering Views
