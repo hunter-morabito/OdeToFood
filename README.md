@@ -30,3 +30,5 @@ This project was completed alongside the ASP.NET Core Fundamentals course offere
 * Attribute Routes
 * Action Results
 * Rendering Views
+* A Table Full of Restaurants
+* Summary

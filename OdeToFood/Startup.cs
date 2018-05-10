@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using OdeToFood.Services;
 
 namespace OdeToFood
 {
@@ -20,6 +21,8 @@ namespace OdeToFood
         {
             // Way of telling ASP.NET core that you will only need one instance of this service for the entire application
             services.AddSingleton<IGreeter, Greeter>();
+            // Scoped, any one that needs the object, then create a new instance and just use it until the next request
+            services.AddScoped<IRestaurantData, InMemoryRestaurantData>();
             services.AddMvc();
         }
 

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 
-namespace OdeToFood
+namespace OdeToFood.Services
 {
     /// <summary>
     /// Custom Interface that will be used in the Configure method in Startup.cs
