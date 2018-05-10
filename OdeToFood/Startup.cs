@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -20,12 +21,6 @@ namespace OdeToFood
             // Way of telling ASP.NET core that you will only need one instance of this service for the entire application
             services.AddSingleton<IGreeter, Greeter>();
             services.AddMvc();
-            // Any time someone needs a new service, create a new instance
-            // services.AddTransient
-
-            // Creates an instance for every request
-            //services.AddScoped
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -33,67 +28,34 @@ namespace OdeToFood
                               IHostingEnvironment env,
                               // IGreeter is our custom interface, that needs to be configured using the configure services
                               // This is called Dependancy Injection
-                              IGreeter greeter,
-                              ILogger<Startup> logger)
+                              IGreeter greeter, ILogger<Startup> logger)
         {
-
-            // How to get middleware:
-            // app.Use
-
-            //// How to write middleware:
-            //app.Use(next =>
-            //{
-            //    // This returned  function is the actual middleware
-            //    return async context =>
-            //    {
-            //        logger.LogInformation("Request Incoming");
-            //        if (context.Request.Path.StartsWithSegments("/mym"))
-            //        {
-            //            // run this middleware
-            //            await context.Response.WriteAsync("Hit!!");
-            //            logger.LogInformation("Request Handled");
-            //        }
-            //        else
-            //        {
-            //            // go to next piece of middleware
-            //            await next(context);
-            //            logger.LogInformation("Response outgoing");
-            //        }
-            //    };
-            //});
-
-            //// ORDER IS IMPORTANT
-            //// Sample of middleware
-            ////app.UseWelcomePage(new WelcomePageOptions
-            //{
-            //    // Create an options object that gets passed into the 'USE', and only run if the path is /wp
-            //    Path = "/wp"
-            //});
 
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseExceptionHandler();
-            }
-
-            // sets up both of the middleware below
-            // app.UseFileServer();
-            // This will look for a default files and set it as your default page, index.html is one of these defaults
-            // app.UseDefaultFiles();
-            // Lets us use the file system (which must be under the 'wwwroot' folder
+           
             app.UseStaticFiles();
 
-            app.UseMvcWithDefaultRoute();
+            app.UseMvc(ConfigureRoutes);
 
             // Dont normally see in normal asp.net applications
             app.Run(async (context) =>
             {
                 var greeting = greeter.GetMessageOfTheDay();
+                // lets the browser interpret the text correctly
+                context.Response.ContentType = "text/plain"; // Called a Mime Type
                 await context.Response.WriteAsync($"{greeting} : {env.EnvironmentName}");
             });
+        }
+
+        private void ConfigureRoutes(IRouteBuilder routeBuilder)
+        {
+            // /Home/Index/4
+
+            routeBuilder.MapRoute("Default", 
+                "{controller=Home}/{action=Index}/{id?}");// the '?' means that the field is optional
         }
     }
 }

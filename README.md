@@ -25,3 +25,5 @@ This project was completed alongside the ASP.NET Core Fundamentals course offere
 ### Controllers in the MVC Framework
 * Introduction
 * The Model View Controller Design Pattern
+* Routing 
+* Conventional Routes
