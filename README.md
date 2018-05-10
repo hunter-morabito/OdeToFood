@@ -27,3 +27,4 @@ This project was completed alongside the ASP.NET Core Fundamentals course offere
 * The Model View Controller Design Pattern
 * Routing 
 * Conventional Routes
+* Attribute Routes
