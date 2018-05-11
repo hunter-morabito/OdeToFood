@@ -32,3 +32,7 @@ This project was completed alongside the ASP.NET Core Fundamentals course offere
 * Rendering Views
 * A Table Full of Restaurants
 * Summary
+
+### Models in the MVC Framework
+* Introduction
+* Models and View Models
