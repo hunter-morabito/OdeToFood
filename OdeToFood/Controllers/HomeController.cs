@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OdeToFood.Models;
 using OdeToFood.Services;
 using OdeToFood.ViewModels;
 
@@ -40,10 +41,23 @@ namespace OdeToFood.Controllers
 
             return View(model);
         }
-
+        
+        // Add route constraints to remove ambiguity
+        [HttpGet]
         public IActionResult Create()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(RestaurantEditModel model)
+        {
+            var newRestaurant = new Restaurant();
+            newRestaurant.Name = model.Name;
+            newRestaurant.Cuisine = model.Cuisine;
+
+            newRestaurant = _restaurantData.Add(newRestaurant);
+            return View("Details", newRestaurant);
         }
     }
 }

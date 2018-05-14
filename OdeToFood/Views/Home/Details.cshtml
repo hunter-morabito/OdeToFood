@@ -3,5 +3,6 @@
 <!-- try not to use 'if' statements in View-->
 <h1>@Model.Name</h1>
 
-<div> ... details ... </div>
+<div> @Model.Id </div>
+<div>Cuisine: @Model.Cuisine</div>
 <a asp-action="Index" asp-controller="Home">Go Back</a>
