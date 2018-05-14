@@ -39,3 +39,4 @@ This project was completed alongside the ASP.NET Core Fundamentals course offere
 * Deatil a Restaurant
 * Create a Restaurant
 * Accepting Form Input
+* POST Redirect GET Pattern
