@@ -37,3 +37,4 @@ This project was completed alongside the ASP.NET Core Fundamentals course offere
 * Introduction
 * Models and View Models
 * Deatil a Restaurant
+* Create a Restaurant

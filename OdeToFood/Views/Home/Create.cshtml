@@ -1,0 +1,15 @@
+﻿@using OdeToFood.Models
+@model Restaurant
+
+<h1>Create</h1>
+
+<form  method="post">
+    <!--<input type="text" name="Name" value="" />-->
+    <!--asp-for associates an input with a property on your model-->
+    <input asp-for="Name"/>
+
+    <!--GetEnumSelectList is an HTML helper uses the data in the Enum of our model to generate a SelectList for us-->
+    <select asp-for="Cuisine" asp-items="@Html.GetEnumSelectList<CuisineType>()"></select>
+
+    <input type="submit" name="save" value="Save" />
+</form>
