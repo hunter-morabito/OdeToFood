@@ -26,5 +26,19 @@ namespace OdeToFood.Controllers
             // If you leave View with no parameters then it will assume the name of the action (Index.cshtml)
             return View(model);
         }
+
+        // Details will look in the URL request for a mapped ID
+        public IActionResult Details(int id)
+        {
+            // Model is now a Restaurant obj
+            var model = _restaurantData.Get(id);
+            if(model == null)
+            {
+                // Redirects the request to the index Action using nameof
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(model);
+        }
     }
 }

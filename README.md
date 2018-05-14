@@ -20,7 +20,7 @@ This project was completed alongside the ASP.NET Core Fundamentals course offere
 * Middleware to Match the Environment
 * Serving Files
 * Setting up ASP.NET MVC Middleware
-* summary
+* Summary
 
 ### Controllers in the MVC Framework
 * Introduction
@@ -36,3 +36,4 @@ This project was completed alongside the ASP.NET Core Fundamentals course offere
 ### Models in the MVC Framework
 * Introduction
 * Models and View Models
+* Deatil a Restaurant
