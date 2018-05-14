@@ -6,10 +6,19 @@
 <form  method="post">
     <!--<input type="text" name="Name" value="" />-->
     <!--asp-for associates an input with a property on your model-->
-    <input asp-for="Name"/>
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
 
-    <!--GetEnumSelectList is an HTML helper uses the data in the Enum of our model to generate a SelectList for us-->
-    <select asp-for="Cuisine" asp-items="@Html.GetEnumSelectList<CuisineType>()"></select>
+    <div>
+        <!--This will go to the Property name and use the property name-->
+        <label asp-for="Cuisine"></label>
+        <!--GetEnumSelectList is an HTML helper uses the data in the Enum of our model to generate a SelectList for us-->
+        <select asp-for="Cuisine" asp-items="@Html.GetEnumSelectList<CuisineType>()"></select>
+        <span asp-validation-for="Cuisine"></span>
+    </div>
 
     <input type="submit" name="save" value="Save" />
 </form>

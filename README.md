@@ -40,3 +40,4 @@ This project was completed alongside the ASP.NET Core Fundamentals course offere
 * Create a Restaurant
 * Accepting Form Input
 * POST Redirect GET Pattern
+* Model Validation with Data Annotations
