@@ -41,3 +41,9 @@ This project was completed alongside the ASP.NET Core Fundamentals course offere
 * Accepting Form Input
 * POST Redirect GET Pattern
 * Model Validation with Data Annotations
+* Summary
+
+### Using the Entity Framework
+* Introduction
+* SQL Server Local DB
+* Installing the Entity Framework
