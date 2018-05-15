@@ -50,3 +50,5 @@ This project was completed alongside the ASP.NET Core Fundamentals course offere
 * Implementing a DbContext
 * Configuring the Entity Framework Services
 * Entity Framework Migrations
+* Up and Running
+* Summary
