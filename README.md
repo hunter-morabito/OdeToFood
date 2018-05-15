@@ -47,3 +47,4 @@ This project was completed alongside the ASP.NET Core Fundamentals course offere
 * Introduction
 * SQL Server Local DB
 * Installing the Entity Framework
+* Implementing a DbContext
