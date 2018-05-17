@@ -52,3 +52,7 @@ This project was completed alongside the ASP.NET Core Fundamentals course offere
 * Entity Framework Migrations
 * Up and Running
 * Summary
+
+### Razor Views
+* Introduction 
+* Layout Views
