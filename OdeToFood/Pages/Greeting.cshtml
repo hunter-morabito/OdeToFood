@@ -1,0 +1,9 @@
+﻿@page "{name}"
+
+<!--One way to use a Service is to define a variable, but this could be dangerous-->
+<!--inject IGreeter Greeter;-->
+
+<!--Instead, use Models-->
+@model GreetingModel
+
+<div>@Model.CurrentGreeting</div>
