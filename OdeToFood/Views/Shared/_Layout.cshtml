@@ -10,7 +10,8 @@
         @RenderBody()
     </div>
     <footer>
-        @RenderSection("footer", required:true)
+                                <!--This means this view is optional-->
+        @RenderSection("footer", required: false)
     </footer>
 </body>
 </html>

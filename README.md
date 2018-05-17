@@ -56,3 +56,4 @@ This project was completed alongside the ASP.NET Core Fundamentals course offere
 ### Razor Views
 * Introduction 
 * Layout Views
+* _ViewStart
