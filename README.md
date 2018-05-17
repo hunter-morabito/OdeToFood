@@ -57,3 +57,4 @@ This project was completed alongside the ASP.NET Core Fundamentals course offere
 * Introduction 
 * Layout Views
 * _ViewStart
+* _ViewImport
