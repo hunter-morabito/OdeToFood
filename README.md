@@ -59,3 +59,4 @@ This project was completed alongside the ASP.NET Core Fundamentals course offere
 * _ViewStart
 * _ViewImport
 * Razor Pages
+* An Edit Form

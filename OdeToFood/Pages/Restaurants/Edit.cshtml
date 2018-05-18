@@ -1,0 +1,29 @@
+﻿@page "{id}"
+@using OdeToFood.Pages.Restaurants
+
+@model EditModel
+
+<h1>Edit @Model.Restaurant.Name</h1>
+
+<form method="post">
+
+    <input type="hidden" asp-for="Restaurant.Id"/>
+
+    <!--<input type="text" name="Name" value="" />-->
+    <!--asp-for associates an input with a property on your model-->
+    <div>
+        <label asp-for="Restaurant.Name"></label>
+        <input asp-for="Restaurant.Name" />
+        <span asp-validation-for="Restaurant.Name"></span>
+    </div>
+
+    <div>
+        <!--This will go to the Property name and use the property name-->
+        <label asp-for="Restaurant.Cuisine"></label>
+        <!--GetEnumSelectList is an HTML helper uses the data in the Enum of our model to generate a SelectList for us-->
+        <select asp-for="Restaurant.Cuisine" asp-items="@Html.GetEnumSelectList<CuisineType>()"></select>
+        <span asp-validation-for="Restaurant.Cuisine"></span>
+    </div>
+
+    <input type="submit" name="save" value="Save" />
+</form>
