@@ -63,3 +63,9 @@ This project was completed alongside the ASP.NET Core Fundamentals course offere
 * Partial Views
 * View Components
 * Summary
+
+### ASP.NET Core Authentication and Authorization
+* Introduction
+* An Overview Of ASP.NET Identity
+* An Overview Of  OpenID Connect
+* Using Secure Connections and Registering the App
