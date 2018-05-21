@@ -12,6 +12,7 @@
     <footer>
                                 <!--This means this view is optional-->
         @RenderSection("footer", required: false)
+        @await Component.InvokeAsync("Greeter")
     </footer>
 </body>
 </html>

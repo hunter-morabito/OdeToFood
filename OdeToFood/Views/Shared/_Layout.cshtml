@@ -10,8 +10,11 @@
         @RenderBody()
     </div>
     <footer>
-                                <!--This means this view is optional-->
+        <!--This means this view is optional-->
         @RenderSection("footer", required: false)
+        <!--await Component.InvokeAsync("Greeter")-->
+        <!--The above isn't very pretty, can use custom Tag Helpers instead-->
+        <vc:greeter></vc:greeter>
     </footer>
 </body>
 </html>
