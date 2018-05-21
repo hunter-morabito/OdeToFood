@@ -60,3 +60,4 @@ This project was completed alongside the ASP.NET Core Fundamentals course offere
 * _ViewImport
 * Razor Pages
 * An Edit Form
+* Partial Views
