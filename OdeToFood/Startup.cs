@@ -54,6 +54,7 @@ namespace OdeToFood
 
             // Middleware for using SSL
             app.UseRewriter(new RewriteOptions()
+                                // This returns a permantent redirect status code
                                 .AddRedirectToHttpsPermanent());
            
             app.UseStaticFiles();
