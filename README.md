@@ -69,3 +69,8 @@ This project was completed alongside the ASP.NET Core Fundamentals course offere
 * An Overview Of ASP.NET Identity
 * An Overview Of  OpenID Connect
 * Using Secure Connections and Registering the App
+* OpenID Connect Configuration
+* Authentication Services and Middleware
+* User Authorization
+* Identities and Claims
+* Summary
